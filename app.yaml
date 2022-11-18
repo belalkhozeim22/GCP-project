@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: gcr.io/deploy-application-368815/app:latest
+        ports:
+        - containerPort: 80
+      
+      - name: redis
+        image: redis
+        ports:
+        - containerPort: 6379
+      
