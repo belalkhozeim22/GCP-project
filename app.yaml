@@ -15,7 +15,7 @@ spec:
       - name: myapp
         image: gcr.io/deploy-application-368815/app:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8000
       
       - name: redis
         image: redis
